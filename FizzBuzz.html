@@ -10,7 +10,7 @@
   <body>
     <div>
       <h1>
-        Fizz Buzz
+        FizzBuzz
       </h1>
     </div>
     <div>
@@ -31,34 +31,36 @@
       <p>
         <Input id="inputID"> <button onclick="submitButton()">Submit</button>
       </p>
-      <p id="answer">
-      Ok, let's FizzBuzz up to <span id="span"></span>
-      </p>
-      <p id="notWhole">
-      Sorry, let's stick to whole numbers for now, try again.
-      </p>
-      <p id="notNumber">
-      Sorry, I don't think that is a number, try again.
-      </p>
-      <p id="demo"></p>
+      <p id="answer"></p>
     </div>
     <script>
         // Your JavaScript goes here!
-        console.log("Hello, World!")
-
-        let input = "no data"
+        console.log("Hello, World!");
         
-        console.log(input)
-
+        // 'run' FizzBuzz when submit button is pushed
         function submitButton() {
-            let input = document.getElementById("inputID").value;
-            console.log(input);
-            document.getElementById("span").innerHTML = input;
+            let submittedData = document.getElementById("inputID").value;
+            console.log("Submitted data: ", submittedData);
+            let testNum = parseFloat(submittedData);
+            console.log("test: ", testNum);
+            let testRes = Number.isInteger(testNum)
+            console.log("Whole?: ", testRes);
+            if(isNaN(submittedData)) {
+                console.log("not a number");
+                document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a valid number. Please try again!");
+            } else if (testRes == false) {
+                console.log("not a whole number");
+                document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a whole number. Please do not use decimals or fractions. Please try again!");
+            } else {
+                console.log("begin");
+                document.getElementById("answer").innerHTML = ("Ok, let's FizzBuzz up to " + submittedData);
+            }
         }
         
 
-        // say input
-        // input > variable
+
+        // FizzBuzz loop
+
         // increment = 1 .. variable
         // increment = *3 = Fizz
         // increment = *5 Buzz
