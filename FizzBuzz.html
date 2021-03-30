@@ -20,6 +20,15 @@
     </div>
     <div>
       <p>
+        Fizz buzz is a group word game for children to teach them about division.
+        Players take turns to count incrementally, replacing any number divisible 
+        by three with the word "fizz", and any number divisible by five with the 
+        word "buzz".
+      </p>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Fizz_buzz">Fizz buzz on Wikipedia</a>
+      </p>
+      <p>
         Write a program that takes a user’s input and prints the numbers from one
         to the number the user entered. However, for multiples of three print Fizz
         instead of the number and for the multiples of five print Buzz. For numbers
@@ -50,10 +59,10 @@
                 document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a valid number. Please try again!");
             } else if (testRes == false) {
                 console.log("not a whole number");
-                document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a whole number. Please do not use decimals or fractions. Please try again!");
+                document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a whole number (or empty submission, haven't filtered empty out yet). Please do not use decimals or fractions. Please try again!");
             } else {
                 console.log("begin");
-                document.getElementById("answer").innerHTML = ("Ok, let's FizzBuzz up to " + submittedData);
+                document.getElementById("answer").innerHTML = ("Ok, let's FizzBuzz up to " + submittedData) + "<br>*Sorry, this part of the script is not yet finished*<br>**hey, it took me a week to get the check right on whole numbers only**";
             }
         }
         
