@@ -48,27 +48,31 @@
         
         // 'run' FizzBuzz when submit button is pushed
         function submitButton() {
-            let submittedData = document.getElementById("inputID").value;
-            console.log("Submitted data: ", submittedData);
-            let testNum = parseFloat(submittedData);
-            console.log("test: ", testNum);
-            let testRes = Number.isInteger(testNum)
-            console.log("Whole?: ", testRes);
-            if(isNaN(submittedData)) {
-                console.log("not a number");
-                document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a valid number. Please try again!");
-            } else if (testRes == false) {
-                console.log("not a whole number");
-                document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a whole number (or empty submission, haven't filtered empty out yet). Please do not use decimals or fractions. Please try again!");
-            } else {
-                console.log("begin");
-                document.getElementById("answer").innerHTML = ("Ok, let's FizzBuzz up to " + submittedData) + "<br>*Sorry, this part of the script is not yet finished*<br>**hey, it took me a week to get the check right on whole numbers only**";
+          // get submitted data
+          let submittedData = document.getElementById("inputID").value;
+          console.log("Submitted data: ", submittedData);
+          // change data from string to number, will return NaN if 'not a number'
+          let testNum = parseFloat(submittedData);
+          console.log("test: ", testNum);
+          // check if data is a whole number
+          let testRes = Number.isInteger(testNum)
+          console.log("Whole number?: ", testRes);
+          // initial response to input
+          if(isNaN(submittedData)) { // check and response if the data was not number
+            console.log("Data entered was not a number");
+            document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a valid number. Please try again!");
+          } else if (testRes == false) { // check and response if the data was not a whole number
+            console.log("Data entered was not a whole number");
+            document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a whole number (or empty submission, haven't filtered empty out yet). Please do not use decimals or fractions. Please try again!");
+          } else { // valid data entered, begin the FizzBuzz loop
+            console.log("Data entered was a valid whole number, begin FizzBuzz game");
+            document.getElementById("answer").innerHTML = ("Ok, let's FizzBuzz up to " + submittedData) + "<br>*Sorry, this part of the script is not yet finished*<br>**hey, it took me a week to get the check right on whole numbers only**";
             }
         }
         
 
 
-        // FizzBuzz loop
+        // FizzBuzz future game loop
 
         // increment = 1 .. variable
         // increment = *3 = Fizz
