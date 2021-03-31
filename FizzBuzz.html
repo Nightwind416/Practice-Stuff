@@ -41,6 +41,8 @@
       <p>
         <Input id="inputID"> <button onclick="submitButton()">Submit</button>
       </p>
+    </div>
+    <div id="answerDiv">
       <p id="answer">
         Awaiting input
       </p>
@@ -49,7 +51,7 @@
       // Your JavaScript goes here!
       console.log("Hello, World!");
       let testMessage = "this is a test"
-      document.getElementById("answer").appendChild(testMessage);
+      document.getElementById("answerDiv").appendChild(testMessage);
 
       // 'run' FizzBuzz when submit button is pushed
       function submitButton() {
