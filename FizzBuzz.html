@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <style>
-      
-  </style>
-  <title>FizzBuzz</title>
-  <meta charset="UTF-8"/>
+    <style>
+    </style>
+    <title>
+      FizzBuzz
+    </title>
+    <meta charset="UTF-8"/>
   </head>
   <body>
     <div>
@@ -35,45 +36,74 @@
         which are multiples of both three and five print FizzBuzz.
       </p>
       <p>
-        Enter your number:
+        Enter your number and hit submit:
       </p>
       <p>
         <Input id="inputID"> <button onclick="submitButton()">Submit</button>
       </p>
-      <p id="answer"></p>
+      <p id="answer">
+        Awaiting input
+      </p>
     </div>
     <script>
-        // Your JavaScript goes here!
-        console.log("Hello, World!");
-        
-        // 'run' FizzBuzz when submit button is pushed
-        function submitButton() {
-          // get submitted data
-          let submittedData = document.getElementById("inputID").value;
-          console.log("Submitted data: ", submittedData);
-          // change data from string to number, will return NaN if 'not a number'
-          let testNum = parseFloat(submittedData);
-          console.log("test: ", testNum);
-          // check if data is a whole number
-          let testRes = Number.isInteger(testNum)
-          console.log("Whole number?: ", testRes);
-          // initial response to input
-          if(isNaN(submittedData)) { // check and response if the data was not number
-            console.log("Data entered was not a number");
-            document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a valid number. Please try again!");
-          } else if (testRes == false) { // check and response if the data was not a whole number
-            console.log("Data entered was not a whole number");
-            document.getElementById("answer").innerHTML = ("Sorry, " + submittedData + " is not a whole number (or empty submission, haven't filtered empty out yet). Please do not use decimals or fractions. Please try again!");
-          } else { // valid data entered, begin the FizzBuzz loop
-            console.log("Data entered was a valid whole number, begin FizzBuzz game");
-            document.getElementById("answer").innerHTML = ("Ok, let's FizzBuzz up to " + submittedData) + "<br>*Sorry, this part of the script is not yet finished*<br>**hey, it took me a week to get the check right on whole numbers only**";
-            }
+      // Your JavaScript goes here!
+      console.log("Hello, World!");
+
+      // 'run' FizzBuzz when submit button is pushed
+      function submitButton() {
+        // clear screen
+        document.getElementById("answer").innerText = ""
+        // get submitted data
+        let submittedData = document.getElementById("inputID").value;
+        console.log("Submitted data: ", submittedData);
+        // change data from string to number, will return NaN if 'not a number'
+        let testNum = parseFloat(submittedData);
+        console.log("test: ", testNum);
+        // check if data is a whole number
+        let wholeNum = Number.isInteger(testNum)
+        console.log("Whole number?: ", wholeNum);
+        // initial response to input
+        if(isNaN(submittedData)) { // check and response if the data was not number
+          console.log("Data entered was not a number");
+          document.getElementById("answer").innerText = "Sorry, " + submittedData + " is not a valid number. Please try again!";
+        } else if (wholeNum == false) { // check and response if the data was not a whole number
+          console.log("Data entered was not a whole number");
+          document.getElementById("answer").innerText = "Sorry, " + submittedData + " is not a whole number (or empty submission, haven't filtered empty out yet). Please do not use decimals or fractions. Please try again!";
+        } else { // valid data entered, begin the FizzBuzz loop
+          console.log("Data entered was a valid whole number, begin FizzBuzz game");
+          document.getElementById("answer").innerText += ("Ok, let's FizzBuzz up to... " + submittedData + "\n");
+          // FizzBuzz loop
+          fizzBuzz(testNum)
+          // document.getElementById("answer").innerText = ("Thanks for playing!";
+          }
+      }
+      // FizzBuzz game loop
+      function fizzBuzz(max) {
+        let i = 1;
+        while (i < max) {
+          if ((i % 3 == 0) && (i % 5 == 0)) {
+            // say FizzBuzz
+            console.log("FizzBuzz");
+            document.getElementById("answer").innerText += "FizzBuzz \n";
+          } else if (i % 5 == 0) {
+            // say Buzz
+            console.log("Buzz");
+            document.getElementById("answer").innerText += "Buzz \n";
+          } else if (i % 3 == 0) {
+            // say Fizz
+            console.log("Fizz");
+            document.getElementById("answer").innerText += "Fizz \n";
+          }else if (i > 9000) {
+            // say Fizz
+            console.log("Over 9000!");
+            document.getElementById("answer").innerText += "Let's not and say we did";
+          } else {
+            // say number
+            console.log("number: ", i);
+            document.getElementById("answer").innerText += i + "\n";
+          }
+          i++
         }
-        
-
-
-        // FizzBuzz future game loop
-
         // increment = 1 .. variable
         // increment = *3 = Fizz
         // increment = *5 Buzz
@@ -82,14 +112,8 @@
         // output
         // repeat until variable
         // say done
-
-
-
-
-
-
-
-
+      }
+      // End of JavaScript section
     </script>
   </body>
 </html>
