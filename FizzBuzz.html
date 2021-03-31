@@ -48,6 +48,8 @@
     <script>
       // Your JavaScript goes here!
       console.log("Hello, World!");
+      let testMessage = "this is a test"
+      document.getElementById("answer").appendChild(testMessage);
 
       // 'run' FizzBuzz when submit button is pushed
       function submitButton() {
@@ -86,7 +88,12 @@
             console.log("Over 9000!");
             document.getElementById("answer").innerText += "Let's not and say we did";
             break;
-          } else if ((i % 3 == 0) && (i % 5 == 0)) {
+          } else if (max > 500) {
+            // over 500
+            console.log("Over 9000!");
+            document.getElementById("answer").innerText += "Anything over 500 starts to get increasingly 'laggy' using my crude and un-optimized code. \n For now, let's not and say we did";
+            break;
+          }else if ((i % 3 == 0) && (i % 5 == 0)) {
             // say FizzBuzz
             console.log("FizzBuzz");
             document.getElementById("answer").innerText += "FizzBuzz \n";
