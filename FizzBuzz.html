@@ -80,23 +80,24 @@
       // FizzBuzz game loop
       function fizzBuzz(max) {
         let i = 1;
-        while (i < max) {
-          if ((i % 3 == 0) && (i % 5 == 0)) {
+        while (i < max + 1) {
+          if (max > 9000) {
+            // say Fizz
+            console.log("Over 9000!");
+            document.getElementById("answer").innerText += "Let's not and say we did";
+            break;
+          } else if ((i % 3 == 0) && (i % 5 == 0)) {
             // say FizzBuzz
             console.log("FizzBuzz");
             document.getElementById("answer").innerText += "FizzBuzz \n";
           } else if (i % 5 == 0) {
             // say Buzz
-            console.log("Buzz");
+            console.log("Buzz");over 9000
             document.getElementById("answer").innerText += "Buzz \n";
           } else if (i % 3 == 0) {
             // say Fizz
             console.log("Fizz");
             document.getElementById("answer").innerText += "Fizz \n";
-          }else if (i > 9000) {
-            // say Fizz
-            console.log("Over 9000!");
-            document.getElementById("answer").innerText += "Let's not and say we did";
           } else {
             // say number
             console.log("number: ", i);
