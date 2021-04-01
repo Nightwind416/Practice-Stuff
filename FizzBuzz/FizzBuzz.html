@@ -9,15 +9,20 @@
     <meta charset="UTF-8"/>
   </head>
   <body>
-    <div>
+    <audio id="myAudio">
+      <source src="FizzBuzz/audio/over9000.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <h3>
       <h1>
         FizzBuzz
       </h1>
-    </div>
-    <div>
       <h2>
         By: Nightwind416
       </h2>
+      <h3 id="lastModified">
+        Latest revision:
+      </h3>
     </div>
     <div>
       <p>
@@ -47,12 +52,22 @@
         Awaiting input
       </p>
     </div>
+    <div>
+      <p>
+        Check back every so often to see code optimization improvements, styling,
+        and i'll start leaving tons of 'easter eggs' in the code to trigger for certain entries.
+      </p>
+    </div>
     <script>
       // Your JavaScript goes here!
       console.log("Hello, World!");
-      let testMessage = "this is a test"
-      document.getElementById("answerDiv").appendChild(testMessage);
-
+      let myGif = new Image();
+      myGif.src = "FizzBuzz/images/over9000.gif";
+      document.getElementById('answer').appendChild(gif);
+      let modifiedDate = document.lastModified;
+      //console.log(modifiedDate.getMonth());
+      //console.log(modifiedDate.getDay());
+      document.getElementById("lastModified").innerText = "This page was last updated on: " + modifiedDate;
       // 'run' FizzBuzz when submit button is pushed
       function submitButton() {
         // clear screen
@@ -78,7 +93,7 @@
           document.getElementById("answer").innerText += ("Ok, let's FizzBuzz up to... " + submittedData + "\n");
           // FizzBuzz loop
           fizzBuzz(testNum)
-          // document.getElementById("answer").innerText = ("Thanks for playing!";
+          //document.getElementById("answer").innerText += ";
           }
       }
       // FizzBuzz game loop
@@ -88,12 +103,16 @@
           if (max > 9000) {
             // say Fizz
             console.log("Over 9000!");
-            document.getElementById("answer").innerText += "Let's not and say we did";
+            document.getElementById("answer").innerText += "\n Over 9000!";
+            // display over 9000 gif
+            // 
+            // play over 9000 wav
+            document.getElementById("myAudio").play()
             break;
-          } else if (max > 500) {
+          } else if (max > 250) {
             // over 500
-            console.log("Over 9000!");
-            document.getElementById("answer").innerText += "Anything over 500 starts to get increasingly 'laggy' using my crude and un-optimized code. \n For now, let's not and say we did";
+            console.log("Over 250!");
+            document.getElementById("answer").innerText += "\n Anything over 250 starts to get increasingly 'laggy' using my crude and un-optimized code. \n \n For now, let's not and say we did";
             break;
           }else if ((i % 3 == 0) && (i % 5 == 0)) {
             // say FizzBuzz
@@ -110,7 +129,7 @@
           } else {
             // say number
             console.log("number: ", i);
-            document.getElementById("answer").innerText += i + "\n";
+            document.getElementById("answer").innerText += i + "\n ";
           }
           i++
         }
