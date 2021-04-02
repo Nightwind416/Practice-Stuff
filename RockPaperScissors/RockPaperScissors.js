@@ -1,6 +1,6 @@
 // terminal input prompt
-let turnSet = 0
-console.log(turnSet);
+//let turnSet = 0
+//console.log(turnSet);
 const prompts = require('prompts');
 (async () => {
   const response = await prompts({
@@ -9,7 +9,7 @@ const prompts = require('prompts');
     message: 'Please enter your selection; Rock, Paper, Scissors'
   });
   console.log(response.Input);
-  turnSet = response.Input;
+  let turnSet = response.Input;
   console.log(turnSet);
   playRound(turnSet);
   return response.Input;
