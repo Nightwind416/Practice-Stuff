@@ -99,6 +99,7 @@ function game() {
     let playerWin = 0;
     let computerWin = 0;
     let ties = 0;
+    let errors = 0
     let currentWinner = "";
     //let turns = window.prompt("How many turns", 5);
     let turns = 5
@@ -113,10 +114,9 @@ function game() {
             computerWin += 1;
         } else if (roundWinner === "tie") {
             ties += 1;
-        } else if (roundWinner === "error") {
-            alert("I'm sorry, there was an error during the round");
         } else {
             alert("I'm sorry, there was an error during the game");
+            errors += 1;
         }
         // overall winner
         currentWinner = overallWinner(playerWin, computerWin);
@@ -127,4 +127,5 @@ function game() {
     }
     // display final scoreboard
     alert("Final results\n------------------------------\nTotal Rounds Played: " + turns + "\n Total Ties: " + ties + "\n Player Total Wins: " + playerWin + "\nComputer Total Wins: " + computerWin + "\nOverall Winner: " + currentWinner + "\n------------------------------")
+    console.log("Errors encountered: " + errors);
 }
