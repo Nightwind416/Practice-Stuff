@@ -75,24 +75,6 @@ function overallWinner(playerWin, computerWin) {
     }
 }
 
-// how many turns?
-function turns() {
-    let turnCount = window.prompt("How many turns", 5);
-    if (playerInput === "rock") {
-        //console.log("Player chooses: ");
-        return playerInput;
-    } else if (playerInput === "paper") {
-        //console.log("Player chooses: ");
-        return playerInput;
-    } else if (playerInput === "scissors") {
-        //console.log("Player chooses: ");
-        return playerInput;
-    } else {
-        alert("invalid input. only choose rock, paper, or scissors");
-        return "player choice error"
-    }
-}
-
 // play game
 function game() {
     let count = 1
@@ -101,8 +83,8 @@ function game() {
     let ties = 0;
     let errors = 0
     let currentWinner = "";
-    //let turns = window.prompt("How many turns", 5);
-    let turns = 5
+    let turns = parseInt(prompt("How many turns"));
+    //let turns = 5
     console.log(turns);
     while (count < (turns + 1)) {
         // play a round and say round winner
