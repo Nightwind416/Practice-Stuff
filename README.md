@@ -15,3 +15,4 @@ helloWorld          2 Apr 2021
 repeatString        3 Apr 2021
 reverseString       4 Apr 2021
 tempConversion      4 Apr 2021
+calculator          4 Apr 2021
