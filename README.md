@@ -4,10 +4,11 @@ Various beginner programs as I follow along with The Odin Project (www.theodinpr
 
 https://nightwind416.github.io/Practice-Stuff/
 
-Google Clone:       March 2021
-FizzBuzz            March 2021
-RockPaperSciccors   2 Mar 2021
-
+Google Clone                March 2021
+FizzBuzz                    March 2021
+RockPaperSciccors           2 Mar 2021
+DommanioulationPractice     Apr 2021
+Birthday page               21 Apr 2021
 
 Completed javascript exercises:
 
@@ -16,3 +17,4 @@ repeatString        3 Apr 2021
 reverseString       4 Apr 2021
 tempConversion      4 Apr 2021
 calculator          4 Apr 2021
+palindrome          21 Apr 2021
