@@ -1,24 +1,24 @@
 // Hello World
-const helloWorld = function() {
+function helloWorld() {
 	return 'Hello, World!'
 }
 
 // Addition
-function add (x, y) {
+function add(x, y) {
 	let num = x + y
 	return num
 	
 }
 
 // Subtraction
-function subtract (x, y) {
+function subtract(x, y) {
 	let num = x - y
 	return num
 	
 }
 
 // Add array
-function sum (array) {
+function sum(array) {
 	let num = array.reduce(function (accumulator, currentValue) {
 		return accumulator + currentValue
 	  }, 0)
@@ -27,7 +27,7 @@ function sum (array) {
 }
 
 // Multiply array
-function multiply (array) {
+function multiply(array) {
 	let num = array.reduce(function (accumulator, currentValue) {
 		return accumulator * currentValue
 	  })
@@ -50,7 +50,7 @@ function factorial(x) {
 }
 
 // Sum between
-const sumAll = function(firstNum, secNum) {
+function sumAll(firstNum, secNum) {
     console.log('\n firstNum: ' + firstNum + '\n secNum: ' + secNum);
     if (typeof firstNum === 'number' && typeof secNum === 'number') {
         if (firstNum < 0 || secNum < 0) {
@@ -75,27 +75,27 @@ const sumAll = function(firstNum, secNum) {
 
 // Temperature Conversion
 // Ferenheit to Celcius
-const ftoc = function(tempF) {
+function ftoc(tempF) {
 	console.log('\nOriginal tempF: ' + tempF);
 	tempC = (tempF - 32) * (5 / 9);
 	console.log('Converted to tempC: ' + tempC);
 	tempC = Math.round(tempC * 10) / 10;
 	console.log('Rounded tempC: ' + tempC);
 	return tempC;
-  }
+}
   
-  // Celsius to Ferenheit
-  const ctof = function(tempC) {
+// Celsius to Ferenheit
+function ctof(tempC) {
 	console.log('\nOriginal tempC: ' + tempC);
 	tempF = (tempC * (9 / 5)) + 32;
 	console.log('Converted to tempF: ' + tempF)
 	tempF = Math.round(tempF * 10) / 10;
 	console.log('Rounded tempF: ' + tempF);
 	return tempF;
-  }
+}
 
-  // Repeat String
-  const repeatString = function(string, num) {
+// Repeat String
+function repeatString(string, num) {
     if (num < 0) {
         return "ERROR"
     }
@@ -110,7 +110,7 @@ const ftoc = function(tempF) {
 }
 
 // Reverse String
-const reverseString = function(inputString) {
+function reverseString(inputString) {
     console.log('\ninputString: ' + inputString);
     let splitArray = inputString.split("");
     console.log('splitArray: ' + splitArray);
@@ -122,7 +122,7 @@ const reverseString = function(inputString) {
 }
 
 // Palindrome check
-const palindromes = function(inputString) {
+function palindromes(inputString) {
     console.log('\ninputString: ' + inputString);
     lowerString = inputString.toLowerCase();
     inputPunc = lowerString.replace(/[\W_]/g, '');
@@ -135,7 +135,6 @@ const palindromes = function(inputString) {
     console.log('reversedString :' + reversedString);
     reversedPunc = reversedString.replace(/[\W_]/g, '');
     console.log('reversedPunc: ' + reversedPunc);
-
 
     if (lowerString.replace(/[\W_]/g, '') === reversedString.replace(/[\W_]/g, '')) {
         console.log('True: ' + inputString.replace(/[\W_]/g, '') + ' = ' + reversedString.replace(/[\W_]/g, ''));
